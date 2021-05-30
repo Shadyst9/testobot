@@ -17,7 +17,7 @@ export default function Settings(props: SettingsProps) {
     return (
         <div className="settings">
             <div>
-                <h2>Wohnung</h2>
+                <h2>Apartment</h2>
                 <div>
                     <label>Breite: </label>
                     <input type="number" value={props.apartmentWidth} onChange={props.changeApartmentWidth} />

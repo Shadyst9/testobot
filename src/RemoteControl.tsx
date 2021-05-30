@@ -19,9 +19,9 @@ export default function RemoteControl(props: RemoteControlProps) {
     }
     return (
         <div className="remoteControl">
-            <div className="remoteControl-button" onClick={turnLeft}>Turn left</div>
-            <div className="remoteControl-button" onClick={moveForward}>Move forward</div>
-            <div className="remoteControl-button" onClick={turnRight}>Turn right</div>
+            <div className="remoteControl-button" onClick={turnLeft}>Links drehen</div>
+            <div className="remoteControl-button" onClick={moveForward}>Forwärts</div>
+            <div className="remoteControl-button" onClick={turnRight}>Rechts drehen</div>
         </div>
     )
 }
