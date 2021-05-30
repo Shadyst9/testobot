@@ -20,6 +20,6 @@ export default function Squaremeter(props: Squaremeter) {
         var squaremeterClass = "squaremeter squaremeter-unknown"
     }
     return (
-        <div className={squaremeterClass}>x{props.xCoordinate}|y{props.yCoordinate}</div>
+        <div className={squaremeterClass}></div>
     )
 }

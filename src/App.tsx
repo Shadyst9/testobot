@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Apartment from './Apartment';
 import RemoteControl from './RemoteControl';
+import Settings from './Settings';
 
 function App() {
   const [apartmentWidth, setApartmentWidth] = useState(5);
@@ -85,22 +86,7 @@ function App() {
       <h1>TESTOBOT</h1>
       <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection}></Apartment>
       <RemoteControl turnLeft={changeTestobotDirection} turnRight={changeTestobotDirection} moveForward={moveTestobotForward}></RemoteControl>
-      <div>
-        <label>ApartmentWidth</label>
-        <input type="number" value={apartmentWidth} onChange={changeApartmentWidth} />
-      </div>
-      <div>
-        <label>ApartmentHeight</label>
-        <input type="number" value={apartmentHeight} onChange={changeApartmentHeight} />
-      </div>
-      <div>
-        <label>TestobotX</label>
-        <input type="number" value={testobotX} onChange={changeTestobotX} />
-      </div>
-      <div>
-        <label>TestobotY</label>
-        <input type="number" value={testobotY} onChange={changeTestobotY} />
-      </div>
+      <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
     </div>
   );
 }
