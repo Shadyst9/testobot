@@ -1,8 +1,6 @@
 # Vorstellung:
 Testobot soll einen fahrenden Roboter simulieren, dessen Zweck es ist in Wohnungen jeglicher Größe nach Temperaturunstimmigkeiten pro Quadratmeter zu suchen und diese zu melden. Testobot erkennt hierbei Wände bevor es zu einer Kollision kommt und verhindert diese. Zum Bewegen des Testobot kann eine simple Fernbedienung mit den Befehlen „nach links drehen“, „nach rechts drehen“ und „forwärts“ genutzt werden.
 
-Leider ist bei diesem Modell ein Problem mit dem Temperatursensor festgestellt worden.
-
 # Komponenten:
 ### App:
 Oberste Start-Komponente die alle Komponenten miteinander verbindet.
@@ -24,5 +22,3 @@ Die Komponente zur Darstellung des Testobot.
 
 # Starten des Projekts:
 Um das Projekt im Browser auszuführen muss zunächst das Projekt via „git clone“ oder als .zip-Datei von hier (Github) heruntergeladen werden. Sobald das Projekt bereitgestellt ist (.zip-Datei muss vorher entpackt werden) sollte im Ordner „testobot“ eine neue Kommandozeile geöffnet werden. Mit dem Befehl „npm start“ sollte sich ein neues Browser-Fenster öffnen mit der Url „localhost:3000“. Das Projekt kann jetzt begutachtet werden.
-
-Alternativ habe ich noch eine .apk-Datei angehängt. Generell ist das Projekt nicht responsive, d.h. bei Wohnungsgrößen die zu groß für den Screen des jeweiligen Geräts sind muss man Scrollen.
