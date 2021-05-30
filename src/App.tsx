@@ -64,9 +64,9 @@ function App() {
   }
 
   // changes the amount of squaremeters to the right and resets the testobot position to the top left corner and its initial direction to "south"
-  const changeRoomWidth = (event: any) => {
-    if (event.target.value >= 1) {
-      setRoomWidth(event.target.value);
+  const changeRoomWidth = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (parseInt(event.target.value) >= 1) {
+      setRoomWidth(parseInt(event.target.value));
       setTestobotX(0);
       setTestobotY(0);
       setTestobotDirection("south");
@@ -74,9 +74,9 @@ function App() {
   }
 
   // changes the amount of squaremeters to the bottom and resets the testobot position to the top left corner
-  const changeRoomHeight = (event: any) => {
-    if (event.target.value >= 1) {
-      setRoomHeight(event.target.value);
+  const changeRoomHeight = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (parseInt(event.target.value) >= 1) {
+      setRoomHeight(parseInt(event.target.value));
       setTestobotX(0);
       setTestobotY(0);
       setTestobotDirection("south");
@@ -84,15 +84,15 @@ function App() {
   }
 
   // sets the X-Coordinate of the testobot if it wouldnt crash and is a number
-  const changeTestobotX = (event: any) => {
-    if (testobotWouldNotCrash(event.target.value, testobotY) && isNaN(parseInt(event.target.value)) === false) {
+  const changeTestobotX = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (testobotWouldNotCrash(parseInt(event.target.value), testobotY) && isNaN(parseInt(event.target.value)) === false) {
       setTestobotX(parseInt(event.target.value));
     }
   }
 
   // sets the Y-Coordinate of the testobot if it wouldnt crash and is a number
-  const changeTestobotY = (event: any) => {
-    if (testobotWouldNotCrash(testobotX, event.target.value) && isNaN(parseInt(event.target.value)) === false) {
+  const changeTestobotY = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (testobotWouldNotCrash(testobotX, parseInt(event.target.value)) && isNaN(parseInt(event.target.value)) === false) {
       setTestobotY(parseInt(event.target.value));
     }
   }
