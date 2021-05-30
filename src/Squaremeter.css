@@ -1,0 +1,40 @@
+.squaremeter {
+  width: 100px;
+  height: 100px;
+}
+
+.squaremeter-unknown {
+  background-color: grey;
+}
+
+.squaremeter-testobot {
+  background-color: yellow;
+}
+
+.squaremeter-good {
+  background-color: green;
+}
+
+.squaremeter-hot {
+  background-color: red;
+}
+
+.squaremeter-cold {
+  background-color: blue;
+}
+
+.testobot-east {
+  border-right: 5px solid purple;
+}
+
+.testobot-south {
+  border-bottom: 5px solid purple;
+}
+
+.testobot-west {
+  border-left: 5px solid purple;
+}
+
+.testobot-north {
+  border-top: 5px solid purple;
+}

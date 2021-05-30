@@ -1,7 +1,26 @@
 import React from 'react'
 
-export default function RemoteControl() {
+interface RemoteControlProps {
+    turnLeft: Function;
+    turnRight: Function;
+    moveForward: Function;
+}
+
+export default function RemoteControl(props: RemoteControlProps) {
+    const turnLeft = () => {
+        props.turnLeft(false);
+    }
+    const turnRight = () => {
+        props.turnRight(true);
+    }
+    const moveForward = () => {
+        props.moveForward();
+    }
     return (
-        <div>RemoteControl</div>
+        <div>
+            <button onClick={turnLeft}>Turn left</button>
+            <button onClick={moveForward}>Move forward</button>
+            <button onClick={turnRight}>Turn right</button>
+        </div>
     )
 }

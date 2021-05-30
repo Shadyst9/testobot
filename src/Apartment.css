@@ -1,0 +1,9 @@
+.apartment {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.apartmentColumn {
+  border: 1px solid black;
+}
