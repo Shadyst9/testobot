@@ -11,6 +11,8 @@ interface ApartmentProps {
 }
 
 export default function Apartment(props: ApartmentProps) {
+
+    // gets the Squaremeter components depending on the apartment height
     const getSquaremeters = (x: Number) => {
         let squaremeters = []
         for (let y = 0; y < props.apartmentHeight; y++) {
@@ -27,6 +29,7 @@ export default function Apartment(props: ApartmentProps) {
         return squaremeters;
     }
 
+    // gets the columns of the apartment depending on the apartment width
     const generateApartment = () => {
         let columns = []
         for (let x = 0; x < props.apartmentWidth; x++) {

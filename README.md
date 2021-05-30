@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Vorstellung:
+Testobot soll einen fahrenden Roboter simulieren, dessen Zweck es ist in Wohnungen jeglicher Größe nach Temperaturunstimmigkeiten pro Quadratmeter zu suchen und diese zu melden. Testobot erkennt hierbei Wände bevor es zu einer Kollision kommt und verhindert diese. Zum Bewegen des Testobot kann eine simple Fernbedienung mit den Befehlen „nach links drehen“, „nach rechts drehen“ und „forwärts“ genutzt werden.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Leider ist bei diesem Modell ein Problem mit dem Temperatursensor festgestellt worden.
 
-## Available Scripts
+# Komponenten:
+### App:
+Oberste Start-Komponente die alle Komponenten miteinander verbindet.
 
-In the project directory, you can run:
+### Settings:
+Komponente zum Setzen der Startbedingungen der Wohnung und des Testobot, sowie aktuelle Statusanzeige des Testobot.
 
-### `npm start`
+### RemoteControl:
+Komponente bestehend aus den drei beschriebenen Befehlen zur Fernsteuerung des Testobot.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Apartment:
+Die aus der Settings-Komponente generierte Wohnung.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Squaremeter:
+Die einzelnen Quadratmeter der Wohnung welche den Status kalt, heiß oder gut enthalten. Enthält auch die Information ob sich ein Testobot auf diesem Quadratmeter befindet oder nicht.
 
-### `npm test`
+### Testobot:
+Die Komponente zur Darstellung des Testobot.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Starten des Projekts:
+Um das Projekt im Browser auszuführen muss zunächst das Projekt via „git clone“ oder als .zip-Datei von hier (Github) heruntergeladen werden. Sobald das Projekt bereitgestellt ist (.zip-Datei muss vorher entpackt werden) sollte im Ordner „testobot“ eine neue Kommandozeile geöffnet werden. Mit dem Befehl „npm start“ sollte sich ein neues Browser-Fenster öffnen mit der Url „localhost:3000“. Das Projekt kann jetzt begutachtet werden.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Alternativ habe ich noch eine .apk-Datei angehängt. Generell ist das Projekt nicht responsive, d.h. bei Wohnungsgrößen die zu groß für den Screen des jeweiligen Geräts sind muss man Scrollen.

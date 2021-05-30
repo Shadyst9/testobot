@@ -6,6 +6,7 @@ interface TestobotProps {
 }
 
 export default function Testobot(props: TestobotProps) {
+    // changes appearance of the testobot depending on its direction
     if (props.testobotDirection) {
         var testobotClass = "testobot testobot-" + props.testobotDirection
     } else
