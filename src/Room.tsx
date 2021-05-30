@@ -1,19 +1,19 @@
 import React from 'react'
-import './Apartment.css';
+import './Room.css';
 import Squaremeter from './Squaremeter';
 
-interface ApartmentProps {
-    apartmentWidth: Number;
-    apartmentHeight: Number;
+interface RoomProps {
+    roomWidth: Number;
+    roomHeight: Number;
     testobotX: Number;
     testobotY: Number;
     testobotDirection: String;
     squaremeters: any;
 }
 
-export default function Apartment(props: ApartmentProps) {
+export default function Room(props: RoomProps) {
 
-    // gets the Squaremeter components depending on the apartment height
+    // gets the Squaremeter components depending on the room height
     const getSquaremeters = (squaremeterArray: any) => {
         let squaremeters = [];
         for (let y = 0; y < squaremeterArray.squaremeters.length; y++) {
@@ -36,8 +36,8 @@ export default function Apartment(props: ApartmentProps) {
         return squaremeters;
     }
 
-    // gets the columns of the apartment depending on the apartment width
-    const generateApartment = () => {
+    // gets the columns of the room depending on the room width
+    const generateRoom = () => {
         let columns = [];
         for (let x = 0; x < props.squaremeters.length; x++) {
             columns.push(
@@ -50,8 +50,8 @@ export default function Apartment(props: ApartmentProps) {
     }
 
     return (
-        <div className="apartment">
-            {generateApartment()}
+        <div className="room">
+            {generateRoom()}
         </div>
     )
 }

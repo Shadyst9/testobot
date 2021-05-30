@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import Apartment from './Apartment';
+import Room from './Room';
 import './App.css';
 import RemoteControl from './RemoteControl';
 import Settings from './Settings';
 
 function App() {
-  const [apartmentWidth, setApartmentWidth] = useState(5);
-  const [apartmentHeight, setApartmentHeight] = useState(5);
+  const [roomWidth, setRoomWidth] = useState(5);
+  const [roomHeight, setRoomHeight] = useState(5);
   const [testobotX, setTestobotX] = useState(0);
   const [testobotY, setTestobotY] = useState(0);
   const [testobotDirection, setTestobotDirection] = useState("south");
   
-  // gets the Squaremeter components depending on the apartment height
+  // gets the Squaremeter components depending on the room height
   const getSquaremeters = (x: Number) => {
     let squaremeters = []
-    for (let y = 0; y < apartmentHeight; y++) {
+    for (let y = 0; y < roomHeight; y++) {
       let temperaturePossibilities = ["good", "cold", "hot"]
       let temperature = temperaturePossibilities[Math.floor(Math.random() * 3)];
       squaremeters.push(
@@ -24,14 +24,14 @@ function App() {
     return squaremeters;
   }
 
-  // gets the columns of the apartment depending on the apartment width
-  const getApartmentArray = () => {
+  // gets the columns of the room depending on the room width
+  const getRoomArray = () => {
     let columns = []
-    for (let x = 0; x < apartmentWidth; x++) {
+    for (let x = 0; x < roomWidth; x++) {
       let squaremeters = getSquaremeters(x);
       columns.push(
         {
-          key: ("apartmentcolumns-" + x),
+          key: ("roomcolumns-" + x),
           squaremeters: squaremeters
         }
       )
@@ -39,11 +39,11 @@ function App() {
     return columns;
   }
 
-  const [squaremeters, setSquaremeters] = useState(getApartmentArray());
+  const [squaremeters, setSquaremeters] = useState(getRoomArray());
 
   const changeSquaremeters = () => {
-    const apartmentArray = getApartmentArray() || [];
-    setSquaremeters(apartmentArray);
+    const roomArray = getRoomArray() || [];
+    setSquaremeters(roomArray);
   }
 
   const setSquaremeterTested = (newX:number, newY:number) => {
@@ -54,7 +54,7 @@ function App() {
 
   // check if the testobot would crash with the planned new position
   const testobotWouldNotCrash = (newX: number, newY: number) => {
-    if (newX >= 0 && newY >= 0 && newX < apartmentWidth && newY < apartmentHeight) {
+    if (newX >= 0 && newY >= 0 && newX < roomWidth && newY < roomHeight) {
     return true;
 
     } else {
@@ -63,9 +63,9 @@ function App() {
   }
 
   // changes the amount of squaremeters to the right and resets the testobot position to the top left corner
-  const changeApartmentWidth = (event: any) => {
+  const changeRoomWidth = (event: any) => {
     if (event.target.value >= 1) {
-      setApartmentWidth(event.target.value);
+      setRoomWidth(event.target.value);
       setTestobotX(0);
       setTestobotY(0);
       setTestobotDirection("south");
@@ -73,9 +73,9 @@ function App() {
   }
 
   // changes the amount of squaremeters to the bottom and resets the testobot position to the top left corner
-  const changeApartmentHeight = (event: any) => {
+  const changeRoomHeight = (event: any) => {
     if (event.target.value >= 1) {
-      setApartmentHeight(event.target.value);
+      setRoomHeight(event.target.value);
       setTestobotX(0);
       setTestobotY(0);
       setTestobotDirection("south");
@@ -153,13 +153,13 @@ function App() {
       <div className="title">TESTOBOT</div>
       <div>
         <div>
-          <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} testobotDirection={testobotDirection} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
+          <Settings changeRoomWidth={changeRoomWidth} changeRoomHeight={changeRoomHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} testobotDirection={testobotDirection} roomWidth={roomWidth} roomHeight={roomHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
           <div className="reload-button">
             <button onClick={changeSquaremeters}>Neu generieren</button>
           </div>
           <RemoteControl turnLeft={changeTestobotDirection} turnRight={changeTestobotDirection} moveForward={moveTestobotForward}></RemoteControl>
         </div>
-        <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection} squaremeters={squaremeters}></Apartment>
+        <Room roomWidth={roomWidth} roomHeight={roomHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection} squaremeters={squaremeters}></Room>
       </div>
     </div>
   );

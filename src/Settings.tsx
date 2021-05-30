@@ -2,13 +2,13 @@ import React, { ChangeEventHandler } from 'react'
 import "./Settings.css";
 
 interface SettingsProps {
-    apartmentWidth: number;
-    apartmentHeight: number;
+    roomWidth: number;
+    roomHeight: number;
     testobotX: number;
     testobotY: number;
     testobotDirection: string;
-    changeApartmentWidth: ChangeEventHandler<HTMLInputElement>;
-    changeApartmentHeight: ChangeEventHandler<HTMLInputElement>;
+    changeRoomWidth: ChangeEventHandler<HTMLInputElement>;
+    changeRoomHeight: ChangeEventHandler<HTMLInputElement>;
     changeTestobotX: ChangeEventHandler<HTMLInputElement>;
     changeTestobotY: ChangeEventHandler<HTMLInputElement>;
 }
@@ -17,16 +17,16 @@ export default function Settings(props: SettingsProps) {
     return (
         <div className="settings">
             <div>
-                <h2>Wohnung</h2>
+                <h2>Raum</h2>
                 <div>
                     <label>Breite: </label>
-                    <input type="number" value={props.apartmentWidth} onChange={props.changeApartmentWidth} />
+                    <input type="number" value={props.roomWidth} onChange={props.changeRoomWidth} />
                 </div>
                 <div>
                     <label>Höhe: </label>
-                    <input type="number" value={props.apartmentHeight} onChange={props.changeApartmentHeight} />
+                    <input type="number" value={props.roomHeight} onChange={props.changeRoomHeight} />
                 </div>
-                <div>Fläche: {props.apartmentWidth * props.apartmentHeight}m²</div>
+                <div>Fläche: {props.roomWidth * props.roomHeight}m²</div>
             </div>
             <div>
                 <h2>Testobot</h2>
