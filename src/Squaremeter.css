@@ -1,42 +1,42 @@
 .squaremeter {
-  width: 100px;
-  height: 100px;
-  border: 10px solid transparent;
+  width: 80px;
+  height: 80px;
+  border: 5px solid transparent;
   margin: 2px 0px 2px 1px;
 }
 
 .squaremeter-unknown {
-  background-color: grey;
+  background-color: white;
 }
 
 .squaremeter-testobot {
-  background-color: grey;
+  background-color: white;
 }
 
 .squaremeter-good {
-  background-color: rgba(0,255,0,0.5);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .squaremeter-hot {
-  background-color: rgba(255,0,0,0.5);
+  background-color: rgba(255,0,0,0.2);
 }
 
 .squaremeter-cold {
-  background-color: rgba(0,0,255,0.5);
+  background-color: rgba(0,200,255,0.2);
 }
 
 .squaremeter-testobot-east {
-  border-right: 10px solid orange;
+  border-right: 5px solid orange;
 }
 
 .squaremeter-testobot-south {
-  border-bottom: 10px solid orange;
+  border-bottom: 5px solid orange;
 }
 
 .squaremeter-testobot-west {
-  border-left: 10px solid orange;
+  border-left: 5px solid orange;
 }
 
 .squaremeter-testobot-north {
-  border-top: 10px solid orange;
+  border-top: 5px solid orange;
 }

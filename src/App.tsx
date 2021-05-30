@@ -55,7 +55,6 @@ function App() {
   // check if the testobot would crash with the planned new position
   const testobotWouldNotCrash = (newX: number, newY: number) => {
     if (newX >= 0 && newY >= 0 && newX < apartmentWidth && newY < apartmentHeight) {
-    setSquaremeterTested(newX, newY)
     return true;
 
     } else {
@@ -69,6 +68,7 @@ function App() {
       setApartmentWidth(event.target.value);
       setTestobotX(0);
       setTestobotY(0);
+      setTestobotDirection("south");
     }
   }
 
@@ -78,6 +78,7 @@ function App() {
       setApartmentHeight(event.target.value);
       setTestobotX(0);
       setTestobotY(0);
+      setTestobotDirection("south");
     }
   }
 
@@ -119,16 +120,28 @@ function App() {
   const moveTestobotForward = () => {
     switch (testobotDirection) {
       case "east":
-        if (testobotWouldNotCrash(testobotX + 1, testobotY)) { setTestobotX(testobotX + 1); }
+        if (testobotWouldNotCrash(testobotX + 1, testobotY)) {
+          setTestobotX(testobotX + 1);
+          setSquaremeterTested(testobotX, testobotY);
+        }
         break;
       case "south":
-        if (testobotWouldNotCrash(testobotX, testobotY + 1)) { setTestobotY(testobotY + 1); }
+        if (testobotWouldNotCrash(testobotX, testobotY + 1)) {
+          setTestobotY(testobotY + 1);
+          setSquaremeterTested(testobotX, testobotY);
+        }
         break;
       case "west":
-        if (testobotWouldNotCrash(testobotX - 1, testobotY)) { setTestobotX(testobotX - 1); }
+        if (testobotWouldNotCrash(testobotX - 1, testobotY)) {
+          setTestobotX(testobotX - 1);
+          setSquaremeterTested(testobotX, testobotY);
+        }
         break;
       case "north":
-        if (testobotWouldNotCrash(testobotX, testobotY - 1)) {setTestobotY(testobotY - 1); }
+        if (testobotWouldNotCrash(testobotX, testobotY - 1)) {
+          setTestobotY(testobotY - 1);
+          setSquaremeterTested(testobotX, testobotY);
+        }
         break;
       default:
         break;
@@ -138,10 +151,16 @@ function App() {
   return (
     <div className="app">
       <div className="title">TESTOBOT</div>
-      <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} testobotDirection={testobotDirection} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
-      <button onClick={changeSquaremeters}>Neu laden</button>
-      <RemoteControl turnLeft={changeTestobotDirection} turnRight={changeTestobotDirection} moveForward={moveTestobotForward}></RemoteControl>
-      <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection} squaremeters={squaremeters}></Apartment>
+      <div>
+        <div>
+          <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} testobotDirection={testobotDirection} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
+          <div className="reload-button">
+            <button onClick={changeSquaremeters}>Neu generieren</button>
+          </div>
+          <RemoteControl turnLeft={changeTestobotDirection} turnRight={changeTestobotDirection} moveForward={moveTestobotForward}></RemoteControl>
+        </div>
+        <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection} squaremeters={squaremeters}></Apartment>
+      </div>
     </div>
   );
 }

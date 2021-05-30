@@ -41,7 +41,7 @@ export default function Apartment(props: ApartmentProps) {
         let columns = [];
         for (let x = 0; x < props.squaremeters.length; x++) {
             columns.push(
-                <div key={props.squaremeters[x].key} className="apartmentColumn">
+                <div key={props.squaremeters[x].key}>
                     {getSquaremeters(props.squaremeters[x])}
                 </div>
             )
