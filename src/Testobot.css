@@ -1,3 +1,19 @@
 .testobot > img {
   width: 100px;
 }
+
+.testobot-east > img {
+  transform: rotate(270deg);
+}
+
+.testobot-south > img {
+  transform: rotate(0deg);
+}
+
+.testobot-west > img {
+  transform: rotate(90deg);
+}
+
+.testobot-north > img {
+  transform: rotate(180deg);
+}

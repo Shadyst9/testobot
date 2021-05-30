@@ -13,8 +13,8 @@ interface Squaremeter {
 
 export default function Squaremeter(props: Squaremeter) {
     if (props.hasTestobot) {
-        var squaremeterClass = "squaremeter squaremeter-testobot testobot-" + props.testobotDirection
-        var testobot = <Testobot></Testobot>
+        var squaremeterClass = "squaremeter squaremeter-testobot squaremeter-testobot-" + props.testobotDirection
+        var testobot = <Testobot testobotDirection={props.testobotDirection}></Testobot>
     }
     else if (props.isTested) {
         var squaremeterClass = "squaremeter squaremeter-" + props.temperature
