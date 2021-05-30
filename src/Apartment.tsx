@@ -21,7 +21,7 @@ export default function Apartment(props: ApartmentProps) {
             let temperaturePossibilities = ["good", "cold", "hot"]
             let temperature = temperaturePossibilities[Math.floor(Math.random() * 3)];
             squaremeters.push(
-                <Squaremeter key={"squaremeter-coordinate-" + x + "-" + y} xCoordinate={x} yCoordinate={y} hasTestobot={hasTestobot} testobotDirection={props.testobotDirection} isTested={true} temperature={temperature}></Squaremeter>
+                <Squaremeter key={"squaremeter-coordinate-" + x + "-" + y} xCoordinate={x} yCoordinate={y} hasTestobot={hasTestobot} testobotDirection={props.testobotDirection} isTested={false} temperature={temperature}></Squaremeter>
             )
         }
         return squaremeters;
