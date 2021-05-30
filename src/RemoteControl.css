@@ -1,0 +1,13 @@
+.remoteControl {
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.remoteControl-button {
+  background-color: orange;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+}

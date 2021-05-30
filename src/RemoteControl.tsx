@@ -1,4 +1,5 @@
 import React from 'react'
+import "./RemoteControl.css"
 
 interface RemoteControlProps {
     turnLeft: Function;
@@ -17,10 +18,10 @@ export default function RemoteControl(props: RemoteControlProps) {
         props.moveForward();
     }
     return (
-        <div>
-            <button onClick={turnLeft}>Turn left</button>
-            <button onClick={moveForward}>Move forward</button>
-            <button onClick={turnRight}>Turn right</button>
+        <div className="remoteControl">
+            <div className="remoteControl-button" onClick={turnLeft}>Turn left</div>
+            <div className="remoteControl-button" onClick={moveForward}>Move forward</div>
+            <div className="remoteControl-button" onClick={turnRight}>Turn right</div>
         </div>
     )
 }

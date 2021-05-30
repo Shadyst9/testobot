@@ -20,26 +20,30 @@ function App() {
   }
 
   const changeApartmentWidth = (event: any) => {
-    if (event.target.value >= 5) {
+    if (event.target.value >= 1) {
       setApartmentWidth(event.target.value);
+      setTestobotX(0);
+      setTestobotY(0);
     }
   }
 
   const changeApartmentHeight = (event: any) => {
-    if (event.target.value >= 5) {
+    if (event.target.value >= 1) {
       setApartmentHeight(event.target.value);
+      setTestobotX(0);
+      setTestobotY(0);
     }
   }
 
   const changeTestobotX = (event: any) => {
-    if (testobotWouldCrash(event.target.value, testobotY)) {
-      setTestobotX(event.target.value);
+    if (testobotWouldCrash(event.target.value, testobotY) && !isNaN(parseInt(event.target.value))) {
+      setTestobotX(parseInt(event.target.value));
     }
   }
 
   const changeTestobotY = (event: any) => {
-    if (testobotWouldCrash(testobotX, event.target.value)) {
-      setTestobotY(event.target.value);
+    if (testobotWouldCrash(testobotX, event.target.value) && !isNaN(parseInt(event.target.value))) {
+      setTestobotY(parseInt(event.target.value));
     }
   }
 
@@ -82,11 +86,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>TESTOBOT</h1>
-      <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection}></Apartment>
+    <div className="app">
+      <div className="title">TESTOBOT</div>
+      <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} testobotDirection={testobotDirection} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
       <RemoteControl turnLeft={changeTestobotDirection} turnRight={changeTestobotDirection} moveForward={moveTestobotForward}></RemoteControl>
-      <Settings changeApartmentWidth={changeApartmentWidth} changeApartmentHeight={changeApartmentHeight} changeTestobotX={changeTestobotX} changeTestobotY={changeTestobotY} apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY}></Settings>
+      <Apartment apartmentWidth={apartmentWidth} apartmentHeight={apartmentHeight} testobotX={testobotX} testobotY={testobotY} testobotDirection={testobotDirection}></Apartment>
     </div>
   );
 }
