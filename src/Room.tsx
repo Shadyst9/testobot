@@ -13,7 +13,7 @@ interface RoomProps {
 
 export default function Room(props: RoomProps) {
 
-    // gets the Squaremeter components depending on the room height
+    // gets the squaremeter components depending on the room height by using the generated object from the App component
     const getSquaremeters = (squaremeterArray: any) => {
         let squaremeters = [];
         for (let y = 0; y < squaremeterArray.squaremeters.length; y++) {
@@ -36,7 +36,7 @@ export default function Room(props: RoomProps) {
         return squaremeters;
     }
 
-    // gets the columns of the room depending on the room width
+    // gets the column components of the room depending on the room width by using the generated object from the App component
     const generateRoom = () => {
         let columns = [];
         for (let x = 0; x < props.squaremeters.length; x++) {

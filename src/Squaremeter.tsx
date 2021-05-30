@@ -12,7 +12,7 @@ interface Squaremeter {
 }
 
 export default function Squaremeter(props: Squaremeter) {
-    // checks if the testobot sits on this specific squaremeter
+    // checks if the testobot sits on this specific squaremeter and decides if the testobot should be shown
     if (props.hasTestobot) {
         var squaremeterClass = "squaremeter squaremeter-testobot squaremeter-testobot-" + props.testobotDirection //+ " squaremeter-" + props.temperature
         var testobot = <Testobot testobotDirection={props.testobotDirection}></Testobot>

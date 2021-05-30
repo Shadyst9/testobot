@@ -11,7 +11,7 @@ function App() {
   const [testobotY, setTestobotY] = useState(0);
   const [testobotDirection, setTestobotDirection] = useState("south");
   
-  // gets the Squaremeter components depending on the room height
+  // gets the object to be used for squaremeter-generating depending on the room height
   const getSquaremeters = (x: Number) => {
     let squaremeters = []
     for (let y = 0; y < roomHeight; y++) {
@@ -24,7 +24,7 @@ function App() {
     return squaremeters;
   }
 
-  // gets the columns of the room depending on the room width
+  // gets the "columns" of the room depending on the room width
   const getRoomArray = () => {
     let columns = []
     for (let x = 0; x < roomWidth; x++) {
@@ -41,28 +41,29 @@ function App() {
 
   const [squaremeters, setSquaremeters] = useState(getRoomArray());
 
+  // resets the squaremeter object depending on the parameters set in the Settings component
   const changeSquaremeters = () => {
     const roomArray = getRoomArray() || [];
     setSquaremeters(roomArray);
   }
 
+  // sets the squaremeters visited by the testobot as tested which will show the squaremeters temperature status
   const setSquaremeterTested = (newX:number, newY:number) => {
     let currentSquaremeters = squaremeters;
     currentSquaremeters[newX].squaremeters[newY].isTested = true;
     setSquaremeters(currentSquaremeters);
   }
 
-  // check if the testobot would crash with the planned new position
+  // checks if the testobot would crash with the planned new position and prevents it
   const testobotWouldNotCrash = (newX: number, newY: number) => {
     if (newX >= 0 && newY >= 0 && newX < roomWidth && newY < roomHeight) {
     return true;
-
     } else {
       return false;
     }
   }
 
-  // changes the amount of squaremeters to the right and resets the testobot position to the top left corner
+  // changes the amount of squaremeters to the right and resets the testobot position to the top left corner and its initial direction to "south"
   const changeRoomWidth = (event: any) => {
     if (event.target.value >= 1) {
       setRoomWidth(event.target.value);
@@ -116,7 +117,7 @@ function App() {
     }
   }
 
-  // moves the testobot for one squaremeter depending on the direction and if the testobot would crash
+  // moves the testobot for one squaremeter and sets the visited squarmeter to "tested" depending on the direction and if the testobot would crash
   const moveTestobotForward = () => {
     switch (testobotDirection) {
       case "east":
