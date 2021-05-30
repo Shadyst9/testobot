@@ -30,6 +30,7 @@ export default function Room(props: RoomProps) {
                     testobotDirection={props.testobotDirection}
                     isTested={squaremeterArray.squaremeters[y].isTested}
                     temperature={squaremeterArray.squaremeters[y].temperature}
+                    degrees={squaremeterArray.squaremeters[y].degrees}
                 ></Squaremeter>
             )
         }

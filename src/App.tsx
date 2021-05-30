@@ -15,10 +15,16 @@ function App() {
   const getSquaremeters = (x: Number) => {
     let squaremeters = []
     for (let y = 0; y < roomHeight; y++) {
-      let temperaturePossibilities = ["good", "cold", "hot"]
-      let temperature = temperaturePossibilities[Math.floor(Math.random() * 3)];
+      let degrees = (Math.random() * 30).toFixed(1);
+      let temperature = "good";
+      if (parseFloat(degrees) < 17.0) {
+        temperature = "cold";
+      } else if (parseFloat(degrees) > 22.0) {
+        temperature = "hot";
+      }
+
       squaremeters.push(
-        { key: ("squaremeter-coordinate-" + x + "-" + y), xCoordinate: x, yCoordinate: y, isTested: false, temperature: temperature }
+        { key: ("squaremeter-coordinate-" + x + "-" + y), xCoordinate: x, yCoordinate: y, isTested: false, temperature: temperature, degrees: degrees }
       )
     }
     return squaremeters;

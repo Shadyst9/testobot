@@ -7,6 +7,7 @@ interface Squaremeter {
     testobotDirection: String;
     isTested: boolean;
     temperature: String;
+    degrees: Number;
     xCoordinate: Number;
     yCoordinate: Number;
 }
@@ -20,10 +21,10 @@ export default function Squaremeter(props: Squaremeter) {
     // if the testobot has already been on this squaremeter it will reveal its temperature status
     else if (props.isTested) {
         var squaremeterClass = "squaremeter squaremeter-" + props.temperature
-        var testobot = <div></div>
+        var testobot = <div>{props.degrees}°C</div>
     } else {
         var squaremeterClass = "squaremeter squaremeter-unknown"
-        var testobot = <div></div>
+        var testobot = <div>{props.degrees}°C</div>
     }
     return (
         <div className={squaremeterClass}>

@@ -1,5 +1,5 @@
 # Vorstellung:
-Testobot soll einen fahrenden Roboter simulieren, dessen Zweck es ist in Räumen jeglicher Größe nach Temperaturunstimmigkeiten pro Quadratmeter zu suchen und diese zu melden. Testobot erkennt hierbei Wände bevor es zu einer Kollision kommt und verhindert diese. Zum Bewegen des Testobot kann eine simple Fernbedienung mit den Befehlen „nach links drehen“, „nach rechts drehen“ und „forwärts“ genutzt werden.
+Testobot soll einen fahrenden Roboter simulieren, dessen Zweck es ist in Räumen jeglicher Größe nach Temperaturunstimmigkeiten pro Quadratmeter zu suchen und diese zu melden. Gute Temperaturen liegen zwischen 17.0°C und 22.0°. Alles außerhalb dieses Bereichs wird entsprechend als zu kalt oder zu warm gekenntzeichnet. Testobot erkennt hierbei Wände bevor es zu einer Kollision kommt und verhindert diese. Zum Bewegen des Testobot kann eine simple Fernbedienung mit den Befehlen „nach links drehen“, „nach rechts drehen“ und „forwärts“ genutzt werden.
 
 # Komponenten:
 ### App:

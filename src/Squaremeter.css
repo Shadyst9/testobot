@@ -3,6 +3,9 @@
   height: 80px;
   border: 5px solid transparent;
   margin: 2px 0px 2px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .squaremeter-unknown {
