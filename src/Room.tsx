@@ -21,9 +21,10 @@ export default function Room(props: RoomProps) {
             if (squaremeterArray.squaremeters[y].xCoordinate === props.testobotX && squaremeterArray.squaremeters[y].yCoordinate === props.testobotY) {
                 hasTestobot = true;
             }
-            squaremeters.push(
+            let key = squaremeterArray.squaremeters[y].key + squaremeterArray.key;
+            let squaremeterComponent = 
                 <Squaremeter
-                    key={squaremeterArray.squaremeters[y].key}
+                    key={key}
                     xCoordinate={squaremeterArray.squaremeters[y].xCoordinate}
                     yCoordinate={squaremeterArray.squaremeters[y].yCoordinate}
                     hasTestobot={hasTestobot}
@@ -32,7 +33,7 @@ export default function Room(props: RoomProps) {
                     temperature={squaremeterArray.squaremeters[y].temperature}
                     degrees={squaremeterArray.squaremeters[y].degrees}
                 ></Squaremeter>
-            )
+            squaremeters.push(squaremeterComponent);
         }
         return squaremeters;
     }

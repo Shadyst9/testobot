@@ -15,7 +15,7 @@ function App() {
   const getSquaremeters = (x: Number) => {
     let squaremeters = []
     for (let y = 0; y < roomHeight; y++) {
-      let degrees = (Math.random() * 30).toFixed(1);
+      let degrees = (Math.random() * (25 - 15) + 15).toFixed(1);
       let temperature = "good";
       if (parseFloat(degrees) < 17.0) {
         temperature = "cold";

@@ -14,17 +14,19 @@ interface Squaremeter {
 
 export default function Squaremeter(props: Squaremeter) {
     // checks if the testobot sits on this specific squaremeter and decides if the testobot should be shown
+    let squaremeterClass;
+    let testobot;
     if (props.hasTestobot) {
-        var squaremeterClass = "squaremeter squaremeter-testobot squaremeter-testobot-" + props.testobotDirection //+ " squaremeter-" + props.temperature
-        var testobot = <Testobot testobotDirection={props.testobotDirection}></Testobot>
+        squaremeterClass = "squaremeter squaremeter-testobot squaremeter-testobot-" + props.testobotDirection //+ " squaremeter-" + props.temperature
+        testobot = <Testobot testobotDirection={props.testobotDirection}></Testobot>
     }
     // if the testobot has already been on this squaremeter it will reveal its temperature status
     else if (props.isTested) {
-        var squaremeterClass = "squaremeter squaremeter-" + props.temperature
-        var testobot = <div>{props.degrees}°C</div>
+        squaremeterClass = "squaremeter squaremeter-" + props.temperature
+        testobot = <div>{props.degrees}°C</div>
     } else {
-        var squaremeterClass = "squaremeter squaremeter-unknown"
-        var testobot = <div>{props.degrees}°C</div>
+        squaremeterClass = "squaremeter squaremeter-unknown"
+        testobot = <div>{props.degrees}°C</div>
     }
     return (
         <div className={squaremeterClass}>
