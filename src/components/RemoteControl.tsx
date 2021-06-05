@@ -26,7 +26,7 @@ class RemoteControl extends Component<Properties, States> {
           Links drehen
         </div>
         <div className="remoteControl-button" onClick={this.moveForward}>
-          Forwärts
+          Vorwärts
         </div>
         <div className="remoteControl-button" onClick={this.turnRight}>
           Rechts drehen
