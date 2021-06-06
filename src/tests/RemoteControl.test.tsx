@@ -1,9 +1,19 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
+import { render } from "@testing-library/react";
+import RemoteControl from "../components/RemoteControl";
 
-test("renders TESTOBOT", () => {
-  render(<App />);
-  const heading = screen.getByText("TESTOBOT");
-  expect(heading).toBeInTheDocument();
+test("REMOTECONTROL renders", () => {
+  const remoteControl = render(
+    <RemoteControl
+      turnLeft={() => {
+        return;
+      }}
+      turnRight={() => {
+        return;
+      }}
+      moveForward={() => {
+        return;
+      }}
+    />
+  );
+  expect(remoteControl).toBeDefined();
 });

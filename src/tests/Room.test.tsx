@@ -1,9 +1,16 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
+import { render } from "@testing-library/react";
+import Room from "../components/Room";
 
-test("renders TESTOBOT", () => {
-  render(<App />);
-  const heading = screen.getByText("TESTOBOT");
-  expect(heading).toBeInTheDocument();
+test("ROOM renders", () => {
+  const room = render(
+    <Room
+      testobotDirection="south"
+      roomWidth={5}
+      roomHeight={5}
+      testobotX={0}
+      testobotY={0}
+      squaremeters={[]}
+    />
+  );
+  expect(room).toBeDefined();
 });

@@ -1,9 +1,7 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
+import { render } from "@testing-library/react";
+import Testobot from "../components/Testobot";
 
-test("renders TESTOBOT", () => {
-  render(<App />);
-  const heading = screen.getByText("TESTOBOT");
-  expect(heading).toBeInTheDocument();
+test("TESTOBOT renders", () => {
+  const testobot = render(<Testobot testobotDirection="south" />);
+  expect(testobot).toBeDefined();
 });

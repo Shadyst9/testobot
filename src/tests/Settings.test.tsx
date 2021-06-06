@@ -1,9 +1,27 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
+import { render } from "@testing-library/react";
+import Settings from "../components/Settings";
 
-test("renders TESTOBOT", () => {
-  render(<App />);
-  const heading = screen.getByText("TESTOBOT");
-  expect(heading).toBeInTheDocument();
+test("SETTINGS renders", () => {
+  const settings = render(
+    <Settings
+      roomWidth={5}
+      roomHeight={5}
+      testobotX={0}
+      testobotY={0}
+      testobotDirection="south"
+      changeRoomWidth={() => {
+        return;
+      }}
+      changeRoomHeight={() => {
+        return;
+      }}
+      changeTestobotX={() => {
+        return;
+      }}
+      changeTestobotY={() => {
+        return;
+      }}
+    />
+  );
+  expect(settings).toBeDefined();
 });
